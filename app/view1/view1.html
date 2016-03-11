@@ -1,0 +1,50 @@
+<div style="margin-top: 150px">
+    <div>
+        <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="2" md-cols-gt-md="4" md-row-height-gt-md="1:1"
+                      md-row-height="2:1" md-gutter="12px" md-gutter-gt-sm="8px">
+
+            <md-grid-tile ng-repeat="item in poll.options">
+
+                <md-card>
+                    <md-button ng-click="selectFood(item.value)">
+                        <md-icon class="name" ng-show="optionSelected === item.value"> favorite </md-icon>
+                    <img ng-src={{item.image}} class="md-card-image" alt="Option image" style="max-height: 300px;">
+                    <!--<md-card-title>-->
+                        <!--&lt;!&ndash;<md-card-title-text>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="md-headline">{{item.display_name}}</span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<span class="md-subhead">{{item.description}}</span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</md-card-title-text>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<md-card-title-media>&ndash;&gt;-->
+                            <!--&lt;!&ndash; &ndash;&gt;-->
+                        <!--&lt;!&ndash;</md-card-title-media>&ndash;&gt;-->
+                    <!--</md-card-title>-->
+                    <md-grid-tile-footer>
+                        <h3>{{item.display_name}}</h3>
+                    </md-grid-tile-footer>
+                    <!--<md-card-actions layout="row" layout-align="end center">-->
+                        <!--<md-button-->
+                                <!--ng-class="{'md-button md-ink-ripple': item.isSelected, 'md-raised md-primary md-button md-ink-ripple': error}"-->
+                                <!--ng-click="selectFood(item.value)">Action 1-->
+                        <!--</md-button>-->
+                    <!--</md-card-actions>-->
+                    </md-button>
+                </md-card>
+
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+    <div layout="row" layout-align="center end" style="margin-top: 150px">
+        <md-input-container class="md-icon-float md-block">
+            <!-- Use floating label instead of placeholder -->
+            <label>Email</label>
+            <md-icon class="name"> face </md-icon>
+            <input ng-model="username" type="text">
+        </md-input-container>
+
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+            <md-button ng-click="submitVote(username)" class="md-raised md-primary md-button md-ink-ripple">Votar
+            </md-button>
+        </md-input-container>
+    </div>
+</div>
